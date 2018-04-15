@@ -1,33 +1,37 @@
 import java.util.Scanner;
 
+
 public class Credit {
 
     public static void main(String[] args) {
-
         System.out.println("Введите сумму кредита");
-        int i = Enter();
-
+        double debt = Enter();
 
         System.out.println("Введите процентную ставку");
         double mon = Monthly();
 
+        while (debt>150){
+          double  r = debt / 100 * mon;
+            System.out.println("Обязательный платеж: " + Math.round(r));
+            double n = debt - r;
+            System.out.println("Задолженность: " + Math.round(n));
+            debt = debt - r;
+        }
 
-        System.out.println("Ежемесячный платеж");
-        double com = i /100 * mon;
-        System.out.println(com);
 
     }
     //Методы
+
     //Ввод данных
-    public static int Enter() {
+    public static double Enter() {
         Scanner sc = new Scanner(System.in);
-        return sc.nextInt();
+        return sc.nextDouble();
     }
 
     //Процентная ставка
     public static double Monthly() {
         Scanner sc2 = new Scanner(System.in);
-        double st = sc2.nextInt();
+        double st = sc2.nextDouble();
         return st / 12 + 5;
     }
 
