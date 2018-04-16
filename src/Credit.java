@@ -11,13 +11,13 @@ public class Credit {
         System.out.println("Введите процентную ставку");
         double mon = Monthly();
         //Считаем задолженность и обязательный платеж
-        while (debt>150) {
-            double r = debt / 100 * mon; //Обязательный платеж
-            double n = debt - r; //Задолженность
-            System.out.println("Обязательный платеж: " + Math.round(r));
-            System.out.println("Задолженность: " + Math.round(n));
-            debt = debt - r;
+        while (debt < 150) {
+            double pay = debt / 100 * mon; //Обязательный платеж
+            System.out.println("Задолженность: " + Math.round(debt));
+            System.out.println("Обязательный платеж: " + Math.round(pay));
+            debt = debt - pay;
             }
+
     }
     //Методы
 
