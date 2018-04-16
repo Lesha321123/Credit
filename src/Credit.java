@@ -4,21 +4,20 @@ import java.util.Scanner;
 public class Credit {
 
     public static void main(String[] args) {
+        //Вводим сумму кредита
         System.out.println("Введите сумму кредита");
         double debt = Enter();
-
+        //Вводим процентную ставку
         System.out.println("Введите процентную ставку");
         double mon = Monthly();
-
-        while (debt>150){
-          double  r = debt / 100 * mon;
+        //Считаем задолженность и обязательный платеж
+        while (debt>150) {
+            double r = debt / 100 * mon; //Обязательный платеж
+            double n = debt - r; //Задолженность
             System.out.println("Обязательный платеж: " + Math.round(r));
-            double n = debt - r;
             System.out.println("Задолженность: " + Math.round(n));
             debt = debt - r;
-        }
-
-
+            }
     }
     //Методы
 
